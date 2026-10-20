@@ -1,0 +1,8 @@
+feature_subset,rcv_auc_mean,rcv_auc_std,test_auc,cv_auc_mean,composite
+texture_spatial,0.8585,0.0988,0.858,0.7762,0.7735
+morphology_texture,0.8512,0.0986,0.8395,0.7662,0.7501
+full_features,0.849,0.0934,0.8766,0.7606,0.7716
+texture_only,0.8267,0.1209,0.7562,0.7681,0.7049
+morphology_only,0.7631,0.1434,0.8549,0.6912,0.7139
+morphology_spatial,0.7595,0.1383,0.7716,0.6981,0.686
+spatial_only,0.6786,0.1433,0.6944,0.6244,0.6135

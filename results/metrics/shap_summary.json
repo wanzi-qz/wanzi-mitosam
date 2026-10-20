@@ -1,0 +1,31 @@
+{
+  "model": "RandomForest",
+  "base_value": 0.4917222222222225,
+  "family_share": {
+    "morphology": 0.2826,
+    "spatial": 0.0819,
+    "texture": 0.6355
+  },
+  "top_features": {
+    "intensity_skewness": 0.0648,
+    "intensity_cv": 0.0514,
+    "intensity_std": 0.0468,
+    "intensity_kurtosis": 0.0325,
+    "intensity_p50": 0.0305,
+    "circularity_mean": 0.0245,
+    "aspect_ratio_std": 0.0211,
+    "intensity_mean": 0.0208,
+    "intensity_p25": 0.02,
+    "skeleton_length_cv": 0.0144,
+    "n_components": 0.0142,
+    "ripley_l_auc": 0.0132,
+    "intensity_p10": 0.013,
+    "nn_mean": 0.013,
+    "n_mitochondria": 0.0117,
+    "network_complexity_mean": 0.0116,
+    "circularity_std": 0.0114,
+    "voronoi_area_cv": 0.0106,
+    "GLCM_correlation_d2_a90": 0.0093,
+    "area_cv": 0.0087
+  }
+}

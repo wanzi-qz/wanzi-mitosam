@@ -1,0 +1,108 @@
+{
+  "dataset": {
+    "n_images": 60,
+    "n_features": 126,
+    "class_balance": {
+      "0": 30,
+      "1": 30
+    }
+  },
+  "classification": {
+    "best": {
+      "model": "XGBoost",
+      "model_key": "xgboost",
+      "feature_subset": "full_features",
+      "n_features": 122.0,
+      "rcv_auc_mean": 0.8317,
+      "rcv_auc_std": 0.0958,
+      "test_auc": 0.8889,
+      "test_pr_auc": 0.9292,
+      "test_accuracy": 0.8333,
+      "test_f1": 0.8,
+      "test_precision": 1.0,
+      "test_recall": 0.6667,
+      "cv_auc_mean": 0.8725,
+      "cv_auc_std": 0.1152,
+      "generalization_gap": 0.0164,
+      "stability": 0.5974,
+      "composite": 0.8402
+    },
+    "subset_summary": [
+      {
+        "feature_subset": "texture_spatial",
+        "rcv_auc_mean": 0.8585,
+        "rcv_auc_std": 0.0988,
+        "test_auc": 0.858,
+        "cv_auc_mean": 0.7762,
+        "composite": 0.7735
+      },
+      {
+        "feature_subset": "morphology_texture",
+        "rcv_auc_mean": 0.8512,
+        "rcv_auc_std": 0.0986,
+        "test_auc": 0.8395,
+        "cv_auc_mean": 0.7662,
+        "composite": 0.7501
+      },
+      {
+        "feature_subset": "full_features",
+        "rcv_auc_mean": 0.849,
+        "rcv_auc_std": 0.0934,
+        "test_auc": 0.8766,
+        "cv_auc_mean": 0.7606,
+        "composite": 0.7716
+      },
+      {
+        "feature_subset": "texture_only",
+        "rcv_auc_mean": 0.8267,
+        "rcv_auc_std": 0.1209,
+        "test_auc": 0.7562,
+        "cv_auc_mean": 0.7681,
+        "composite": 0.7049
+      },
+      {
+        "feature_subset": "morphology_only",
+        "rcv_auc_mean": 0.7631,
+        "rcv_auc_std": 0.1434,
+        "test_auc": 0.8549,
+        "cv_auc_mean": 0.6912,
+        "composite": 0.7139
+      },
+      {
+        "feature_subset": "morphology_spatial",
+        "rcv_auc_mean": 0.7595,
+        "rcv_auc_std": 0.1383,
+        "test_auc": 0.7716,
+        "cv_auc_mean": 0.6981,
+        "composite": 0.686
+      },
+      {
+        "feature_subset": "spatial_only",
+        "rcv_auc_mean": 0.6786,
+        "rcv_auc_std": 0.1433,
+        "test_auc": 0.6944,
+        "cv_auc_mean": 0.6244,
+        "composite": 0.6135
+      }
+    ],
+    "permutation_control": {
+      "model": "random_forest",
+      "feature_subset": "full_features",
+      "observed_auc": 0.9136,
+      "null_mean": 0.5146,
+      "null_std": 0.1398,
+      "null_max": 0.8312,
+      "n_permutations": 50,
+      "p_value": 0.0196,
+      "interpretation": "observed AUC is separable from the null -> signal beyond label leakage/noise"
+    }
+  },
+  "figures": [
+    "figures\\ablation_auc.png",
+    "figures\\feature_distributions.png",
+    "figures\\feature_correlation.png",
+    "figures\\segmentation_qualitative.png",
+    "figures\\feature_overlay.png",
+    "figures\\spatial_overlay.png"
+  ]
+}

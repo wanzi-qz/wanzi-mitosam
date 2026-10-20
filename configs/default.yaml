@@ -1,0 +1,56 @@
+data:
+  image_dir: data/sample/images
+  mask_dir: data/sample/masks
+  patch_size: 512
+  patches_per_image: 16
+  val_split: 0.2
+  seed: 42
+  augment: true
+
+model:
+  sam_checkpoint: weights/sam_vit_b_01ec64.pth
+  sam_type: vit_b
+  adapter_channels: 256
+  use_cbam: true
+  use_adapter: true
+  train_decoder: true
+  input_size: 1024
+
+train:
+  epochs: 3
+  batch_size: 1
+  lr: 0.0001
+  weight_decay: 0.0001
+  prompt_points: 10
+  amp: true
+  grad_clip: 1.0
+  num_workers: 0
+  checkpoint_dir: weights
+  device: auto
+
+features:
+  min_area: 50
+  max_area: 12000
+  pixel_size_um: 0.1
+  texture_bins: 64
+  lbp_points: 24
+  lbp_radius: 3
+  ripley_max_radius_px: 80.0
+  ripley_steps: 16
+  families: [morphology, texture, spatial]
+
+evaluation:
+  n_features: 30
+  n_splits: 5
+  n_repeats: 10
+  random_state: 42
+  models: [logreg, random_forest, xgboost, lightgbm]
+  feature_subsets:
+    - morphology_only
+    - texture_only
+    - spatial_only
+    - morphology_texture
+    - texture_spatial
+    - morphology_spatial
+    - full_features
+  shap_samples: 200
