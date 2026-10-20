@@ -91,11 +91,44 @@ Label-permutation control (50 permutations): observed AUC 0.914 vs shuffled-labe
 16-bit SR microscopy) cannot be published; on it, the thesis measured family-level AUCs of  
 0.62 (spatial) to 0.99 (morphology+texture) with the same code paths.
 
+## Figures
+
+**Feature-family ablation** — repeated 5×10-fold stratified CV (mean ± std over 50 folds,
+4 models). Full feature set beats every single family; two-family combinations tie it
+at n=60 (see the scaling check below).
+
+![Feature-family ablation](results/figures/ablation_auc.png)
+
+**Why the tie is noise, not redundancy** — paired ΔAUC (full − reduced) at n=60 vs
+n=300. Grey distributions straddle zero (not significant); blue ones sit clearly above
+it (p ≤ 1e-5 for texture+spatial and texture-only). A bar below zero marked *ns* means
+"no detectable difference", not "three families are worse".
+
+![Sample-size scaling check](results/figures/scaling_check.png)
+
+**SHAP attribution** — top drivers and per-family contribution (texture ≈ 64%,
+morphology ≈ 28%, spatial ≈ 8% on the synthetic benchmark, matching the ablation
+ordering).
+
+![SHAP summary](results/figures/shap_summary.png)
+
+**Label-permutation control** — the observed AUC sits far outside the shuffled-label
+null (50 permutations, p = 0.02), so the signal is not leakage.
+
+![Permutation control](results/figures/permutation_control.png)
+
+**Qualitative segmentation** — GT instances vs. prediction overlays on held-out fields.
+
+![Qualitative segmentation](results/figures/segmentation_qualitative.png)
+
+All figures are regenerated from CSVs by `python -m MitoSAM.pipelines.run_all` —
+no hand-drawn numbers anywhere.
+
 ## Install
 
 ```bash
-git clone https://github.com/<you>/MitoSAM.git
-cd MitoSAM
+git clone https://github.com/wanzi-qz/wanzi-mitosam.git
+cd wanzi-mitosam
 pip install -e ".[train,explain,gui]"        # or: pip install -r requirements.txt
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
