@@ -97,29 +97,29 @@ Label-permutation control (50 permutations): observed AUC 0.914 vs shuffled-labe
 4 models). Full feature set beats every single family; two-family combinations tie it
 at n=60 (see the scaling check below).
 
-![Feature-family ablation](results/figures/ablation_auc.png)
+<p align="center"><img src="results/figures/ablation_auc.png" width="700" alt="Feature-family ablation"></p>
 
 **Why the tie is noise, not redundancy** — paired ΔAUC (full − reduced) at n=60 vs
 n=300. Grey distributions straddle zero (not significant); blue ones sit clearly above
 it (p ≤ 1e-5 for texture+spatial and texture-only). A bar below zero marked *ns* means
 "no detectable difference", not "three families are worse".
 
-![Sample-size scaling check](results/figures/scaling_check.png)
+<p align="center"><img src="results/figures/scaling_check.png" width="700" alt="Sample-size scaling check"></p>
 
 **SHAP attribution** — top drivers and per-family contribution (texture ≈ 64%,
 morphology ≈ 28%, spatial ≈ 8% on the synthetic benchmark, matching the ablation
 ordering).
 
-![SHAP summary](results/figures/shap_summary.png)
+<p align="center"><img src="results/figures/shap_summary.png" width="620" alt="SHAP summary"></p>
 
 **Label-permutation control** — the observed AUC sits far outside the shuffled-label
 null (50 permutations, p = 0.02), so the signal is not leakage.
 
-![Permutation control](results/figures/permutation_control.png)
+<p align="center"><img src="results/figures/permutation_control.png" width="560" alt="Permutation control"></p>
 
 **Qualitative segmentation** — GT instances vs. prediction overlays on held-out fields.
 
-![Qualitative segmentation](results/figures/segmentation_qualitative.png)
+<p align="center"><img src="results/figures/segmentation_qualitative.png" width="620" alt="Qualitative segmentation"></p>
 
 All figures are regenerated from CSVs by `python -m MitoSAM.pipelines.run_all` —
 no hand-drawn numbers anywhere.
